@@ -1,0 +1,17 @@
+<project name="active_object" basedir="." default="run">
+  <mkdir dir="build"/>
+
+  <target name="build">
+    <javac srcdir="src" destdir="build" debug="on">
+      <include name="**/*.java"/>
+    </javac>
+  </target>
+
+  <target name="run" depends="build">
+    <java fork="true" classname="com.jbalint.activeobject.DemoApp">
+      <classpath>
+	<pathelement path="build"/>
+      </classpath>
+    </java>
+  </target>
+</project>
